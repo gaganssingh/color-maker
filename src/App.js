@@ -1,9 +1,10 @@
-import "./App.css";
+import Palette from "./Palette";
+import seedColorPalettes from "./seedColorPalettes";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Color maker</h1>
+    <div>
+      <Palette {...seedColorPalettes[4]} />
     </div>
   );
 }
