@@ -11,7 +11,7 @@ class Navbar extends Component {
     format: "hex",
   };
 
-  handleChange = (e) => {
+  handleFormatChange = (e) => {
     this.setState({ format: e.target.value });
     this.props.handleChange(e.target.value);
   };
@@ -37,7 +37,7 @@ class Navbar extends Component {
           </div>
         </div>
         <div className="select-container">
-          <Select value={format} onChange={this.handleChange}>
+          <Select value={format} onChange={this.handleFormatChange}>
             <MenuItem value="hex">HEX - #ffffff</MenuItem>
             <MenuItem value="rgb">RGB - rgb(255, 255, 255)</MenuItem>
             <MenuItem value="rgba">RGBA - rgba(255, 255, 255, 1)</MenuItem>
