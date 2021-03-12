@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ColorBox from "./ColorBox";
+import Footer from "./Footer";
 import Navbar from "./Navbar";
 
 import "./Palette.css";
@@ -19,10 +20,10 @@ class Palette extends Component {
   closeSnackbar = () => this.setState({ open: false });
 
   render() {
-    const { colors } = this.props.palette;
+    const { colors, paletteName, emoji } = this.props.palette;
     const { level, format, open } = this.state;
     const colorBoxes = colors[level].map((color) => (
-      <ColorBox background={color[format]} name={color.name} />
+      <ColorBox key={color.id} background={color[format]} name={color.name} />
     ));
 
     return (
@@ -38,7 +39,7 @@ class Palette extends Component {
           handleChange={this.changeFormat}
         />
         <div className="Palette-colors">{colorBoxes}</div>
-        {/* Put footer here */}
+        <Footer paletteName={paletteName} emoji={emoji} />
       </div>
     );
   }
