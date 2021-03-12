@@ -8,12 +8,12 @@ class ColorBox extends Component {
     copied: false,
   };
 
-  // changeCopyState = () =>
-  //   this.setState({ copied: true }, () =>
-  //     setTimeout(() => this.setState({ copied: false }), 1500)
-  //   );
+  changeCopyState = () =>
+    this.setState({ copied: true }, () =>
+      setTimeout(() => this.setState({ copied: false }), 1500)
+    );
 
-  changeCopyState = () => this.setState({ copied: true });
+  // changeCopyState = () => this.setState({ copied: true });
 
   render() {
     const { name, background } = this.props;
