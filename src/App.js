@@ -14,7 +14,9 @@ function App() {
       <Route
         exact
         path="/"
-        render={() => <PaletteList palettes={seedColorPalettes} />}
+        render={(routeProps) => (
+          <PaletteList palettes={seedColorPalettes} {...routeProps} />
+        )}
       />
       <Route
         exact
