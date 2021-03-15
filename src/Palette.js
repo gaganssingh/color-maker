@@ -40,6 +40,7 @@ class Palette extends Component {
         />
         <Navbar
           level={level}
+          showLevelSlider={true}
           changeLevel={this.changeLevel}
           handleChange={this.changeFormat}
         />
