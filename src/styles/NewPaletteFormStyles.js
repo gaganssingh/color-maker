@@ -1,7 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 // All code copied from material-ui and updated as necessary
-const drawerWidth = 240;
+const drawerWidth = 400;
 
 const styles = makeStyles((theme) => ({
   root: {
@@ -44,6 +44,7 @@ const styles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
+    height: "calc(100vh - 64px)",
     padding: theme.spacing(3),
     transition: theme.transitions.create("margin", {
       easing: theme.transitions.easing.sharp,
