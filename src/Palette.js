@@ -5,33 +5,7 @@ import Navbar from "./Navbar";
 import { withStyles } from "@material-ui/styles";
 import SnackbarPopup from "./SnackbarPopup";
 
-import "./Palette.css";
-
-const styles = {
-  palette: {
-    height: "100vh",
-    display: "flex",
-    flexDirection: "column",
-  },
-
-  colors: {
-    height: "90%",
-  },
-
-  // .Palette-footer {
-  //   background-color: #fff,
-  //   height: 5vh,
-  //   display: flex,
-  //   justify-content: flex-end,
-  //   align-items: center,
-  //   font-weight: bold,
-  // }
-
-  // .emoji {
-  //   font-size: 1.5rem,
-  //   margin: 1rem,
-  // }
-};
+import styles from "./styles/PaletteStyles";
 
 class Palette extends Component {
   state = {
