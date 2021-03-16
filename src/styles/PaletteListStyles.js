@@ -14,10 +14,23 @@ const styles = {
     flexWrap: "wrap",
   },
   nav: {
+    color: "#fff",
     display: "flex",
     width: "100%",
     justifyContent: "space-between",
-    color: "#fff",
+    alignItems: "center",
+    "& a": {
+      textDecoration: "none",
+      color: "#fff",
+      border: "1px solid #fff",
+      padding: "7px",
+      borderRadius: "5px",
+    },
+    "& a:hover": {
+      color: "black",
+      border: "1px solid black",
+      backgroundColor: "#fff",
+    },
   },
   palettes: {
     boxSizing: "border-box",
