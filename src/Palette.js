@@ -2,9 +2,36 @@ import React, { Component } from "react";
 import ColorBox from "./ColorBox";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
+import { withStyles } from "@material-ui/styles";
+import SnackbarPopup from "./SnackbarPopup";
 
 import "./Palette.css";
-import SnackbarPopup from "./SnackbarPopup";
+
+const styles = {
+  palette: {
+    height: "100vh",
+    display: "flex",
+    flexDirection: "column",
+  },
+
+  colors: {
+    height: "90%",
+  },
+
+  // .Palette-footer {
+  //   background-color: #fff,
+  //   height: 5vh,
+  //   display: flex,
+  //   justify-content: flex-end,
+  //   align-items: center,
+  //   font-weight: bold,
+  // }
+
+  // .emoji {
+  //   font-size: 1.5rem,
+  //   margin: 1rem,
+  // }
+};
 
 class Palette extends Component {
   state = {
@@ -19,6 +46,7 @@ class Palette extends Component {
 
   render() {
     const { colors, paletteName, emoji, id } = this.props.palette;
+    const { classes } = this.props;
     const { level, format, open } = this.state;
     const colorBoxes = colors[level].map((color) => (
       <ColorBox
@@ -32,7 +60,7 @@ class Palette extends Component {
     ));
 
     return (
-      <div className="Palette">
+      <div className={classes.palette}>
         <SnackbarPopup
           open={open}
           format={format}
@@ -44,11 +72,11 @@ class Palette extends Component {
           changeLevel={this.changeLevel}
           handleChange={this.changeFormat}
         />
-        <div className="Palette-colors">{colorBoxes}</div>
+        <div className={classes.colors}>{colorBoxes}</div>
         <Footer paletteName={paletteName} emoji={emoji} />
       </div>
     );
   }
 }
 
-export default Palette;
+export default withStyles(styles)(Palette);
