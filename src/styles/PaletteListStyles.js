@@ -25,6 +25,7 @@ const styles = {
       border: "1px solid #fff",
       padding: "7px",
       borderRadius: "5px",
+      textAlign: "center",
     },
     "& a:hover": {
       color: "black",
